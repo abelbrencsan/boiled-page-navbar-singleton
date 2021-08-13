@@ -17,7 +17,7 @@ Class name | Description | Example
 `navbar` | Applies navigation bar. | `<header class="navbar"></header>`
 `navbar-menu` | Applies a navigation menu inside navigation bar which contains a button that opens offset navigation on medium or smaller breapoint. | `<div class="navbar-menu"></div>`
 `navbar-nav` | Applies a navigation inside navigation bar. | `<nav class="navbar-nav"></nav>`
-`navbar-nav-links` | Applies a list of navigation links inside navigation. | `<ul class="navbar-nav-links"></ul>`
+`navbar-nav-link-list` | Applies a list of navigation links inside navigation. | `<ul class="navbar-nav-link-list"></ul>`
 `navbar-nav-close` | Applies a close button inside navigation that closes offset navigation on medium or smaller breapoints. | `<button class="navbar-menu"></button>`
 
 ### Examples
@@ -34,7 +34,7 @@ The following example shows a navigation bar with dropdown subnavigations. `data
       <button type="button" data-offset-nav-trigger>Navigation</button>
     </div>
     <nav class="navbar-nav" data-offset-nav-element>
-      <ul class="navbar-nav-links">
+      <ul class="navbar-nav-link-list">
         <li>
           <a href="#">Home</a>
         </li>
