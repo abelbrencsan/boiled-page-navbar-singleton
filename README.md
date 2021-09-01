@@ -1,6 +1,7 @@
+
 # Boiled Page navbar singleton
 
-Navbar SCSS singleton for Boiled Page frontend framework. It is intended to create a horizontal navigation bar with dropdown subnavigations, which becomes a vertical offset navigation on medium or smaller breakpoint.
+Navbar SCSS singleton for Boiled Page frontend framework. It is intended to create a horizontal navigation bar with dropdown subnavigations, which becomes a vertical offset navigation on medium or smaller breakpoints.
 
 ## Install
 
@@ -15,10 +16,11 @@ Place `_navbar.scss` file to `/assets/css/singletons` directory, and add its pat
 Class name | Description | Example
 ---------- | ----------- | -------
 `navbar` | Applies navigation bar. | `<header class="navbar"></header>`
-`navbar-menu` | Applies a navigation menu inside navigation bar which contains a button that opens offset navigation on medium or smaller breapoint. | `<div class="navbar-menu"></div>`
+`navbar-wrapper` | Applies a wrapper inside navigation bar. | `<header class="navbar"></header>`
+`navbar-menu` | Applies a menu inside navigation bar which contains a button that opens offset navigation on medium or smaller breakpoints. | `<div class="navbar-menu"></div>`
 `navbar-nav` | Applies a navigation inside navigation bar. | `<nav class="navbar-nav"></nav>`
 `navbar-nav-link-list` | Applies a list of navigation links inside navigation. | `<ul class="navbar-nav-link-list"></ul>`
-`navbar-nav-close` | Applies a close button inside navigation that closes offset navigation on medium or smaller breapoints. | `<button class="navbar-menu"></button>`
+`navbar-nav-close` | Applies a close button inside navigation that closes offset navigation on medium or smaller breakpoints. | `<button class="navbar-menu"></button>`
 
 ### Examples
 
@@ -29,52 +31,54 @@ The following example shows a navigation bar with dropdown subnavigations. `data
 ```html
 <header class="navbar" data-offset-nav>
   <div class="container">
-    <a href="#" class="navbar-logo">My Company</a>
-    <div class="navbar-menu">
-      <button type="button" data-offset-nav-trigger>Navigation</button>
+    <div class="navbar-wrapper">
+      <a href="#" class="navbar-logo">My Company</a>
+      <div class="navbar-menu">
+        <button type="button" data-offset-nav-trigger>Navigation</button>
+      </div>
+      <nav class="navbar-nav" data-offset-nav-element>
+        <ul class="navbar-nav-link-list">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li data-navbar-subnav>
+            <button type="button" data-navbar-subnav-trigger>Services</button>
+            <ul data-navbar-subnav-element>
+              <li>
+                <a href="#">Web design</a>
+              </li>
+              <li>
+                <a href="#">Web development</a>
+              </li>
+              <li>
+                <a href="#">Graphic design</a>
+              </li>
+            </ul>
+          </li>
+          <li data-navbar-subnav>
+            <button type="button" data-navbar-subnav-trigger>Products</button>
+            <ul data-navbar-subnav-element>
+              <li>
+                <a href="#">CMS systems</a>
+              </li>
+              <li>
+                <a href="#">CRM systems</a>
+              </li>
+              <li>
+                <a href="#">Servers</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+        <button type="button" class="navbar-nav-close" data-offset-nav-close>Close</button>
+      </nav>
     </div>
-    <nav class="navbar-nav" data-offset-nav-element>
-      <ul class="navbar-nav-link-list">
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li data-navbar-subnav>
-          <button type="button" data-navbar-subnav-trigger>Services</button>
-          <ul data-navbar-subnav-element>
-            <li>
-              <a href="#">Web design</a>
-            </li>
-            <li>
-              <a href="#">Web development</a>
-            </li>
-            <li>
-              <a href="#">Graphic design</a>
-            </li>
-          </ul>
-        </li>
-        <li data-navbar-subnav>
-          <button type="button" data-navbar-subnav-trigger>Products</button>
-          <ul data-navbar-subnav-element>
-            <li>
-              <a href="#">CMS systems</a>
-            </li>
-            <li>
-              <a href="#">CRM systems</a>
-            </li>
-            <li>
-              <a href="#">Servers</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Blog</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-      </ul>
-      <button type="button" class="navbar-nav-close" data-offset-nav-close>Close</button>
-    </nav>
   </div>
 </header>
 ```

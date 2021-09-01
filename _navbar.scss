@@ -25,10 +25,10 @@ header.navbar {
 		top: 0;
 	}
 
-	> div.container {
+	div.navbar-wrapper {
 		align-items: center;
 		display: flex;
-		height: inherit;
+		height: $navbar-height;
 		justify-content: space-between;
 	}
 
@@ -148,6 +148,10 @@ header.navbar {
 
 	@include breakpoint('medium') {
 		height: $navbar-medium-height;
+
+		div.navbar-wrapper {
+			height: $navbar-medium-height;
+		}
 
 		nav.navbar-nav {
 			background-color: $navbar-offset-bg-color;
