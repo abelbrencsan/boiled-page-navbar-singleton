@@ -140,7 +140,7 @@ if (mediaQuery.media == app.breakpoints.medium && app.navbar.offsetNav !== null)
     app.navbar.offsetNav.element.setAttribute('aria-hidden','true');
   }
   else {
-    if (app.navbar.offsetNav.getIsOpened()) {
+    if (app.navbar.offsetNav.isOpened) {
       app.navbar.offsetNav.close();
     }
     app.navbar.offsetNav.element.setAttribute('aria-hidden','false');
